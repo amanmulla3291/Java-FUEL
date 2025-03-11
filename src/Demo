@@ -1,0 +1,3 @@
+Create one banking system with the help of encapsulation,
+you have to use data member of Balance, Account Number, Withdrawl Amount, Deposit Amount
+You have to use validation alaso if someone wants to withdraw the amt from bal if amt is lesser than the withdraw amt you have to show the message InSufficient Bal and if bal is > the withdraw amt - the amt from bal and show the remaining bal
