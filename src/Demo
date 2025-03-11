@@ -1,3 +1,20 @@
 Create one banking system with the help of encapsulation,
 you have to use data member of Balance, Account Number, Withdrawl Amount, Deposit Amount
-You have to use validation alaso if someone wants to withdraw the amt from bal if amt is lesser than the withdraw amt you have to show the message InSufficient Bal and if bal is > the withdraw amt - the amt from bal and show the remaining bal
+Y1
+ou have to use validation alaso if someone wants to withdraw the amt from bal if amt is lesser than the withdraw amt you have to show the message InSufficient Bal and if bal is > the withdraw amt - the amt from bal and show the remaining bal
+
+* Method Binding:
+
+* Polymorphism:
+1. It means many "forms"
+2. The ability of a method to behave differently when different objects are acting upon it.
+3. The ability of a method to execute different forms when different objects are acting upon it.
+
+Diff types of polymorphism:
+1. Compile-Time Polymorphism:
+    It is achieved with the help of method overloading.
+    Compile time polymorphism is also referred as early binding or static binding.
+    Method binding is happening as compile-time, hence we call method overloading as early binding or static binding or compile time polymorphism.
+    Out of so many overloaded method which method implementation should get executed is decided by compiler during the compile time.
+
+2. Run-Time Polymorphism
