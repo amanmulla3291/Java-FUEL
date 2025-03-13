@@ -128,5 +128,7 @@ public class Main {
 - It does not contain constructor.
 - We cannot create Object on interface.
 
-### ![img.png](img.png)
+### ![img.png](Img-Files/img.png)
+
+![img.png](Img-Files/img1.png)
 
