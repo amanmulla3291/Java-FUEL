@@ -292,7 +292,7 @@ public class Main {
 **Date: 14/03/2025**
 
 ## Exception Handling
-
+[Exception_Handling Example](src/Exception_Handling)
 1. Exception is an event or interpretation which stop the execution of a program it is called as an Exception.
 2. In other words exception is a runtime interpretation which cannot be handled.
 3. Errors can occur during:
@@ -306,6 +306,10 @@ public class Main {
 2. If there is a try block, mandatory catch block should be present or vice versa.
 3. The solution should always be written within the catch block.
 4. catch block will be executed if an Exception occur.
+5. One ``Try Block`` can have any number of catch block.
+6. There should not be any executable lines of code between ``try and catch block``
+7. It is always a good practice to handle the super class exception as the last catch block.
+
 
 *Syntax:*
 ```
@@ -328,6 +332,7 @@ try {
   - **ClassNotFoundException**
   - **InterruptedException**
   - **ReflectiveOperationException**
+  
   - **RuntimeException** (Unchecked)
     - ArithmeticException
     - NullPointerException
@@ -348,6 +353,20 @@ try {
     - ClassNotFoundError
     - NoClassDefFoundError
 
+``` Note:
+  We have to use multiple catch block but we have to use try block only once.
+  ```
+
+## Internally
+1. An object of arithmetic exception is created.
+2. the object is thrown to suitable catch block.
+3. It is caught by the catch block.
+
+### Imp method present is throwable class:
+1. PrintStackTrace()
+    This method is used to get complete info about the exception.
+2. GetMessage()
+    This method is used to return a small message about the exception occurred.
 
 
   
