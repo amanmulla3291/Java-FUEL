@@ -1,5 +1,161 @@
 # FUEL
 
+---
+
+**Date:** 14/03/2025
+
+# Core Java Basics
+
+## Java Overview
+
+1. **Platform Independence**: Write once, run anywhere (WORA).
+2. **Object-Oriented**: Follows principles like encapsulation, inheritance, polymorphism, and abstraction.
+3. **Robust**: Includes strong memory management and exception handling.
+4. **Portable**: Programs written in Java can run on different hardware environments.
+
+---
+
+**Date:** 15/03/2025
+
+## Data Types
+
+1. **Primitive Data Types**:
+  - `byte`, `short`, `int`, `long` – for integers.
+  - `float`, `double` – for decimal values.
+  - `char` – for characters.
+  - `boolean` – for `true` or `false`.
+
+2. **Non-Primitive Data Types**:
+  - Strings, Arrays, Classes, and Interfaces.
+
+### Example: Primitive vs. Non-Primitive
+
+```java:
+int number = 25; // Primitive
+String text = "Hello, Java!"; // Non-Primitive
+```
+
+---
+
+**Date:** 16/03/2025
+
+## Control Statements
+
+1. **Decision-Making Statements**:
+  - `if`, `if-else`, `switch`
+
+2. **Looping Statements**:
+  - `for`, `while`, `do-while`
+
+3. **Jumping Statements**:
+  - `break`, `continue`
+
+### Example: Using a Loop
+
+```java:
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Count: " + i);
+}
+```
+
+---
+
+**Date:** 17/03/2025
+
+## Classes and Objects
+
+1. **Class**: A blueprint for creating objects.
+2. **Object**: An instance of a class.
+
+### Syntax: Creating a Class and Object
+
+```java
+class Example {
+    int value = 10; // Data member
+
+    void display() { // Member function
+        System.out.println("Value: " + value);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Example obj = new Example(); // Creating an object
+        obj.display(); // Accessing a method
+    }
+}
+```
+
+---
+
+**Date:** 18/03/2025
+
+## Constructors
+
+1. **Definition**: A block of code used to initialize objects.
+2. **Characteristics**:
+  - Same name as the class.
+  - No return type, not even `void`.
+
+1. **Types of Constructors**:
+  - Default Constructor.
+  - Parameterized Constructor.
+
+### Example: Parameterized Constructor
+
+```java:
+class Example {
+    int value;
+
+    Example(int value) { // Constructor
+        this.value = value;
+    }
+
+    void display() {
+        System.out.println("Value: " + value);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Example obj = new Example(100); // Passing value to constructor
+        obj.display();
+    }
+}
+```
+
+---
+
+**Date:** 19/03/2025
+
+## Access Modifiers
+
+1. **Public**: Accessible from anywhere.
+2. **Private**: Accessible only within the same class.
+3. **Protected**: Accessible within the same package or by subclasses.
+4. **Default**: Accessible only within the same package (no keyword required).
+
+### Example: Using Access Modifiers
+
+```java
+class Example {
+    private int value = 10;
+
+    public void display() {
+        System.out.println("Value: " + value);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Example obj = new Example();
+        obj.display();
+    }
+}
+```
+
+---
+
 **Date:** 11/02/2025
 
 ## Overview
@@ -130,5 +286,34 @@ public class Main {
 
 ### ![img.png](Img-Files/img.png)
 
-![img.png](Img-Files/img1.png)
+### ![img.png](Img-Files/img1.png)
 
+
+**Date: 14/03/2025**
+
+## Exception Handling
+
+1. Exception is an event or interpretation which stop the execution of a program it is called as an Exception.
+2. In other words exception is a runtime interpretation which cannot be handled.
+3. Errors can occur during:
+   1. Compile Error - Syntax Error
+   2. Runtime Error - Execution
+4. The process of handling an exception is called as Exception Handling.
+5. Typically, an exception is handled using ```Try Block & Catch Block.```
+
+### Try Block & Catch Block
+1. The critical line of code which gives and exception should be written inside the ```try block```.
+2. If there is a try block, mandatory catch block should be present or vice versa.
+3. The solution should always be written within the catch block.
+4. catch block will be executed if an Exception occur.
+
+*Syntax:*
+```
+try {
+    // Code that might throw an exception
+} catch (ExceptionType e) {
+    // Code to handle the exception
+}
+```
+
+## Array
