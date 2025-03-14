@@ -316,4 +316,38 @@ try {
 }
 ```
 
-## Array
+### Java Exception Hierarchy
+
+## Throwable (Root Class)
+- **Exception** (Checked)
+  - **IOException**
+    - FileNotFoundException
+    - EOFException
+    - SocketException
+  - **SQLException**
+  - **ClassNotFoundException**
+  - **InterruptedException**
+  - **ReflectiveOperationException**
+  - **RuntimeException** (Unchecked)
+    - ArithmeticException
+    - NullPointerException
+    - ClassCastException
+    - IndexOutOfBoundsException
+      - ArrayIndexOutOfBoundsException
+      - StringIndexOutOfBoundsException
+    - IllegalArgumentException
+      - NumberFormatException
+    - UnsupportedOperationException
+    - ConcurrentModificationException
+- **Error** (Unchecked, Critical)
+  - **OutOfMemoryError**
+  - **StackOverflowError**
+  - **VirtualMachineError**
+  - **AssertionError**
+  - **LinkageError**
+    - ClassNotFoundError
+    - NoClassDefFoundError
+
+
+
+  
