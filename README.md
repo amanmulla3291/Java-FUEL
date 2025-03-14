@@ -272,6 +272,8 @@ public class Main {
 **Date:** 13/03/2025
 
 ## Interface
+[Interface Example](src/Interface)
+
 - Interface is a java type definition which has to be declared using interface keyword.
 - Interface is a media between two systems where in one system is a client/user and another system is Object with resource and service.
 - Interface can have variables, those variables are automatically public, static and final.
@@ -293,6 +295,7 @@ public class Main {
 
 ## Exception Handling
 [Exception_Handling Example](src/Exception_Handling)
+
 1. Exception is an event or interpretation which stop the execution of a program it is called as an Exception.
 2. In other words exception is a runtime interpretation which cannot be handled.
 3. Errors can occur during:
@@ -309,6 +312,7 @@ public class Main {
 5. One ``Try Block`` can have any number of catch block.
 6. There should not be any executable lines of code between ``try and catch block``
 7. It is always a good practice to handle the super class exception as the last catch block.
+8. We can use the nested try and catch block in program.
 
 
 *Syntax:*
@@ -368,5 +372,37 @@ try {
 2. GetMessage()
     This method is used to return a small message about the exception occurred.
 
+   Note : [Demo3.java](src/Exception_Handling/Demo3.java)
 
-  
+### Finally Block
+1. The set of instructions which has to be executed all the time, has to return within the finally block.
+2. Finally block is block of code which it executed all the time. i.e. irrespective of Exception occur or not.
+
+---
+
+### Checked Exception
+1. Checked exception is known by the compiler.
+2. It can be handled immediately.
+3. It is called as a ```extinct exception```
+
+### Unchecked Exception
+1. It can be handled not immediately.
+2. It is also called as an ``Extend Runtime exception.``
+
+[Example of Checked and Unchecked Exception](src/Exception_Handling/Demo4.java)
+
+
+---
+ ## Throws
+1. Throws is a  indication to the caller about the possibility of an Exception.
+2. Throws is used to propagate an exception.
+3. Throws is generally used with check exception.
+4. Typically, we use throws with methods, and it can use ``throws`` w.r.t constructor as well.
+
+## Custom / User Defined Exception:
+1. Based on object or project it is some time necessary to create our own exception and those exception which the user/programmer create are called as a custom exception or user defined exception.
+2. Rules for working with custom exception:
+   1. Create a class with Exception name.
+   2. The exception class which we created should either inherit exception (checked) or runtime exception (unchecked) class.
+   3. Create an obj of the exception class and invoke/throw obj of the exception.
+   4. Handle it using try & catch block.
