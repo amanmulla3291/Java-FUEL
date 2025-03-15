@@ -406,3 +406,4 @@ try {
    2. The exception class which we created should either inherit exception (checked) or runtime exception (unchecked) class.
    3. Create an obj of the exception class and invoke/throw obj of the exception.
    4. Handle it using try & catch block.
+

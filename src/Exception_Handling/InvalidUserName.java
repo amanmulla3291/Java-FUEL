@@ -1,5 +1,5 @@
 package Exception_Handling;
 
-public class InvalidUserName extends Throwable {
+class InvalidUserName extends Exception {
 
 }
