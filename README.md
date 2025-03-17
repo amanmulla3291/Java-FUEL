@@ -171,6 +171,8 @@ A banking system utilizing **encapsulation**, with the following data members:
     - **"Insufficient Balance"**
 - If the balance is **sufficient**, deduct the withdrawal amount and display the remaining balance.
 
+[BankingSystem](src/BankingSystem)
+
 ---
 
 ## Method Binding
@@ -394,7 +396,7 @@ try {
 
 ---
  ## Throws
-1. Throws is a  indication to the caller about the possibility of an Exception.
+1. Throws is an indication to the caller about the possibility of an Exception.
 2. Throws is used to propagate an exception.
 3. Throws is generally used with check exception.
 4. Typically, we use throws with methods, and it can use ``throws`` w.r.t constructor as well.
@@ -406,4 +408,99 @@ try {
    2. The exception class which we created should either inherit exception (checked) or runtime exception (unchecked) class.
    3. Create an obj of the exception class and invoke/throw obj of the exception.
    4. Handle it using try & catch block.
+
+
+**Date: 15/03/2025**
+
+## Arrays
+Bubble Selection
+
+## Collection Framework
+**Date:17/03/2025**
+
+| Array                              | Collection                                 |
+|------------------------------------|--------------------------------------------|
+| 1. Array stores homogeneous data   | 1. Collection stores heterogeneous data    |
+| 2. Size of an array is fixed       | 2. Size of a collection is dynamic         |
+| 3. Array does not have any methods | 3. Collection contains pre-defined methods |
+| 4. Array does not support generics | 4. Collection supports generics            |
+
+### Collections
+Collection is a pre-defined interface.
+It is stored into ``java.util`` package.
+Collection means group of objects.
+
+## Hierarchy of Collection framework in Java
+![hierarchy-of-collection-framework-in-java.webp](Img-Files/hierarchy-of-collection-framework-in-java.webp)
+
+Pre-defined methods in collection interface
+
+| No. | Method           | Syntax                     | Description                                                      |
+|-----|------------------|----------------------------|------------------------------------------------------------------|
+| 1.  | `.add()`         | `.add(item)`               | Adds an item to the collection if it wasn’t a member already.    |
+| 2.  | `.addAll()`      | `.addAll(collection)`      | Adds all elements in the given collection to the collection.     |
+| 3.  | `.remove()`      | `.remove(item)`            | Removes an item from the collection.                             |
+| 4.  | `.removeAll()`   | `.removeAll(collection)`   | Removes all items in the given collection from the collection.   |
+| 5.  | `.contains()`    | `.contains(item)`          | Returns `true` if the item is present in the collection.         |
+| 6.  | `.containsAll()` | `.containsAll(collection)` | Returns `true` if all items in the given collection are present. |
+| 7.  | `.isEmpty()`     | `.isEmpty()`               | Returns `true` if the collection is empty.                       |
+| 8.  | `.clear()`       | `.clear()`                 | Removes all elements from the collection.                        |
+| 9.  | `.size()`        | `.size()`                  | Returns the number of elements in the collection.                |
+| 10. | `.iterator()`    | `.iterator()`              | Returns an iterator to traverse through the collection.          |
+
+## 1. List
+
+It is a predefined interface. `List` is stored in the `java.util` package.  
+`List` was introduced in **JDK 1.2**.
+
+### **Types of List:**
+- `ArrayList`
+- `LinkedList`
+- `Vector`
+- `Stack`
+
+### **Specifications of List:**
+1. List stores data in **insertion order**.
+2. **Duplicates** are allowed in a List.
+3. List is **index-based**.
+4. `null` values can be inserted in a List.
+
+#### **Example:**
+```java:
+List L1 = new ArrayList();
+          new LinkedList();
+          new Vector();
+          new Stack();
+```
+
+### **1.1 Array List**
+1. It is a pre-defined class.
+2. it is stored into ``java.util`` package.
+3. It is introduced from ``jdk 1.2``.
+
+### **Specification of Array List**
+1. The initial capacity of array list is 10.
+2. Incremental Capacity of Array List is
+   ``Incremental Capacity = { (Current Capacity / 2) * 3 } + 1``
+3. Array List is ``re-sizable array`` or ``growable array``.
+
+[Example](src/ArrayList/Demo.java)
+```java
+package ArrayList;
+
+import java.util.ArrayList;
+
+public class Demo {
+    public static void main(String[] args) {
+        ArrayList al = new ArrayList();
+        al.add(10);
+        al.add(20);
+        al.add("SAM");
+        al.add(20.5);
+        al.add(null);
+        al.add(20);
+        System.out.println("Array List : " + al);
+    }
+}
+```
 
