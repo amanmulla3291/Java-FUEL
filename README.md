@@ -544,3 +544,12 @@ public class Demo1 {
     }
 }
 ```
+
+### For Each Loop
+Example:
+```java
+        for (int i : Arr){
+            if (i%2==0){
+                System.out.println(in);
+            }
+```
