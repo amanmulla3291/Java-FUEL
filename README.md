@@ -435,18 +435,21 @@ Collection means group of objects.
 
 Pre-defined methods in collection interface
 
-| No. | Method           | Syntax                     | Description                                                      |
-|-----|------------------|----------------------------|------------------------------------------------------------------|
-| 1.  | `.add()`         | `.add(item)`               | Adds an item to the collection if it wasn’t a member already.    |
-| 2.  | `.addAll()`      | `.addAll(collection)`      | Adds all elements in the given collection to the collection.     |
-| 3.  | `.remove()`      | `.remove(item)`            | Removes an item from the collection.                             |
-| 4.  | `.removeAll()`   | `.removeAll(collection)`   | Removes all items in the given collection from the collection.   |
-| 5.  | `.contains()`    | `.contains(item)`          | Returns `true` if the item is present in the collection.         |
-| 6.  | `.containsAll()` | `.containsAll(collection)` | Returns `true` if all items in the given collection are present. |
-| 7.  | `.isEmpty()`     | `.isEmpty()`               | Returns `true` if the collection is empty.                       |
-| 8.  | `.clear()`       | `.clear()`                 | Removes all elements from the collection.                        |
-| 9.  | `.size()`        | `.size()`                  | Returns the number of elements in the collection.                |
-| 10. | `.iterator()`    | `.iterator()`              | Returns an iterator to traverse through the collection.          |
+| No. | Method           | Syntax                     | Description                                                                           |
+|-----|------------------|----------------------------|---------------------------------------------------------------------------------------|
+| 1.  | `.add()`         | `.add(item)`               | Adds an item to the collection if it wasn’t a member already.                         |
+| 2.  | `.addAll()`      | `.addAll(collection)`      | Adds all elements in the given collection to the collection.                          |
+| 3.  | `.remove()`      | `.remove(item)`            | Removes an item from the collection.                                                  |
+| 4.  | `.removeAll()`   | `.removeAll(collection)`   | Removes all items in the given collection from the collection.                        |
+| 5.  | `.contains()`    | `.contains(item)`          | Returns `true` if the item is present in the collection.                              |
+| 6.  | `.containsAll()` | `.containsAll(collection)` | Returns `true` if all items in the given collection are present.                      |
+| 7.  | `.isEmpty()`     | `.isEmpty()`               | Returns `true` if the collection is empty.                                            |
+| 8.  | `.clear()`       | `.clear()`                 | Removes all elements from the collection.                                             |
+| 9.  | `.size()`        | `.size()`                  | Returns the number of elements in the collection.                                     |
+| 10. | `.iterator()`    | `.iterator()`              | Returns an iterator to traverse through the collection.                               |
+| 11. | `.get()`         | `.get()`                   | Returns an object based on index position.                                            |
+| 12. | `.indexOf()`     | `.indexOf()`               | Used to find index position of an object and first occurrence in case of duplication. |
+| 12. | `.set()`         | `.set()`                   | Used to find index position of an object and first occurrence in case of duplication. |
 
 ## 1. List
 
@@ -500,6 +503,44 @@ public class Demo {
         al.add(null);
         al.add(20);
         System.out.println("Array List : " + al);
+    }
+}
+```
+
+
+**Date:18/03/2025**
+### **1.2 Linked List**
+1. Linked List is a predefined class.
+2. It is stored into ``java.util`` package.
+3. It is introduced from ``JDK 1.2``.
+
+![LinkedList.png](Img-Files/LinkedList.png)
+
+### **Specification of Linked List**
+1. The initial capacity of Linked List is zero or null.
+2. The Incremental capacity of Linked List is 1 or depends upon object.
+
+[Linked List Example](src/LinkedList/Demo.java)
+
+1. Add() is used to Appending elements randomly inside array list using index value and element value by changing position of other elements.
+2. set() is used to add an object based on the index position and already existing object get override.
+
+```java
+public class Demo1 {
+    public static void main(String[] args) {
+        ArrayList al = new ArrayList();
+        al.add(10);
+        al.add(20);
+        al.add(30);
+        al.add(40);
+
+        System.out.println(al);
+
+        al.add(1,70);
+        System.out.println(al);
+
+        al.set(1, 50);
+        System.out.println(al);
     }
 }
 ```
