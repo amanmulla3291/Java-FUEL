@@ -541,7 +541,7 @@ public class Demo1 {
 
         al.set(1, 50);
         System.out.println(al);
-    }
+    } 
 }
 ```
 
@@ -553,3 +553,17 @@ Example:
                 System.out.println(in);
             }
 ```
+
+## Vector
+1. It is a pre-defined class which is stored into ``java.util`` package.
+2. It is introduced from ```jdk 1.2```.
+3. Initial Capacity of vector is ``10``.
+4. Incremental Capacity of vector is ``CurrentCapacity * 2``.
+5. It is also called as a ``Thread-Safe`` (synchronized).
+
+
+Array List is not thread same.                                  Vector is thread same.
+Array list three constructors.                                  Vector have 4 constructor
+Incremental Capacity of Array List is
+``Incremental Capacity = { (Current Capacity / 2) * 3 } + 1``   Incremental Capacity of vector is ``CurrentCapacity * 2``.
+It is introduced from ``jdk 1.2``                               It is introduced from ``jdk 1.0``
