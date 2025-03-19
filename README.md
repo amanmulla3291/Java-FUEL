@@ -567,3 +567,22 @@ Array list three constructors.                                  Vector have 4 co
 Incremental Capacity of Array List is
 ``Incremental Capacity = { (Current Capacity / 2) * 3 } + 1``   Incremental Capacity of vector is ``CurrentCapacity * 2``.
 It is introduced from ``jdk 1.2``                               It is introduced from ``jdk 1.0``
+
+## Set
+Set is a pre-defined interface which is stored into ``java.util`` package.
+It is introduced from ``jdk 1.2``
+
+
+| Set                                             | List                                     |
+|-------------------------------------------------|------------------------------------------|
+| Insertion order in ``set`` is not followed.     | Insertion order in ``list`` is followed. |
+| In ``set`` duplicates are not allowed.          | Duplicates in ``list`` are allowed.      |
+| ``Set`` is not an index based.                  | ``List`` is index based.                 |
+| Null value is allowed in ``set`` only one time. | Null values allowed multiple times.      |
+
+
+### HashSet:
+1. It is pre-defined class which is stored in ``java.util`` package.
+2. It is also underlined DSA of collection.
+3. Initial capacity of HashSet is ``16``.
+4. ```Incremental Capacity is 75 % of Initial capacity.```
