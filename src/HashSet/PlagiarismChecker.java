@@ -12,7 +12,7 @@ public class PlagiarismChecker {
 
         String Doc2 = "Java is a versatile programming language." +
                 "Often utilized for web development and desktop solutions." +
-                " What the f**k";
+                " What is this?";
 
         String[] LinesDoc1 = Doc1.split("\\.");
         String[] LinesDoc2 = Doc2.split("\\.");

@@ -586,3 +586,18 @@ It is introduced from ``jdk 1.2``
 2. It is also underlined DSA of collection.
 3. Initial capacity of HashSet is ``16``.
 4. ```Incremental Capacity is 75 % of Initial capacity.```
+
+### LinkHashSet
+1. LinkHashSet is a pre-defined class wihch stored into ``java.util`` package.
+2. It is introduced from ``jdk 1.4``
+3. It is the updated version of HashSet.
+4. LinkHashSet cannot allow duplicate values.
+5. LinkHashSet follow ``insertion order``.
+6. Initial Capacity `16`.
+
+
+### TreeSet
+1. It is a pre-defined class and stored in ``jaav.util`` package.
+2. It is introduced from ``jdk 1.2``
+3. TreeHashSet it contains ``compareTo()``.
+![img.png](Img-Files/TreeSet.png)
