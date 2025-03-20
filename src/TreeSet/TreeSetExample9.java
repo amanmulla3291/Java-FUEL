@@ -10,6 +10,6 @@ public class TreeSetExample9 {
         treeSet.add("Cherry");
         String lowest = treeSet.pollFirst();
         System.out.println("Lowest element removed: " + lowest);
-        System.out.println("TreeSet after removal: " + treeSet);
+        System.out.println("TreeSet after : " + treeSet);
     }
 }
