@@ -588,7 +588,7 @@ It is introduced from ``jdk 1.2``
 4. ```Incremental Capacity is 75 % of Initial capacity.```
 
 ### LinkHashSet
-1. LinkHashSet is a pre-defined class wihch stored into ``java.util`` package.
+1. LinkHashSet is a pre-defined class which stored into ``java.util`` package.
 2. It is introduced from ``jdk 1.4``
 3. It is the updated version of HashSet.
 4. LinkHashSet cannot allow duplicate values.
@@ -601,3 +601,54 @@ It is introduced from ``jdk 1.2``
 2. It is introduced from ``jdk 1.2``
 3. TreeHashSet it contains ``compareTo()``.
 ![img.png](Img-Files/TreeSet.png)
+
+
+**Date: 22/03/2025**
+### Map:
+1. Map is a pre-defined interface which is stored into ``java.util`` package.
+2. It is introduced from `jdk 1.2`.
+3. Map store the data with the help of keys and values and group of keys and values we call it as an element or ``entries``.
+
+| Key | Value | 
+|-----|-------| 
+| 101 | Tom   | 
+| 102 | Sam   | 
+| 103 | Sim   | 
+
+Hierarchy of Map Interface
+
+            java.util.Map()
+                    |
+---------------------------------------
+|                   |                 |
+HashMap(c)      SortedMap()         HashTable
+|
+
+1. Map is part of collection framework which does not extend the collection interface.
+2. Map is used to organize the data in terms of `is-an` value pair.
+3. Keys cannot be duplicate, values can be duplicate.
+4. Map is pre-defined interface present in `java.util` package.
+5. The implementation classes of the map.
+   
+**Classes**
+1. HashMap()
+2. LinkedHashMap
+
+6. One key and one value together we call it as a entry, therefore in order map in a collection we call it as an entries.
+
+### Imp methods used w.r.t Map
+1. Put()
+2. Get()
+3. Clear()
+4. isEmpty()
+5. remove()
+6. containsKey()
+7. containsValue()
+8. KeySet()
+
+### Map()=>
+HashMap:
+1. It is a predefined class which iss stored into `java.util` package and introduced from ``jdk 1.2``.
+2. In HashMap insertion order is not maintained.
+3. In HashMap duplicates are allowed but only in `values/elements` not in `keys`.
+4. 
