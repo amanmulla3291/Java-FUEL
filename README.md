@@ -939,3 +939,40 @@ mysql> select EmpName, Designation from employees where Designation = 'Manager';
 1 row in set (0.00 sec)
 ```
 
+
+- Write a query show the database of employee name and employee salary with hike of 10% if the salary is < 30,000.
+```text
+mysql> select * from employees;
++----+---------+-----------+---------------+----------------------------+
+| Id | EmpName | EmpSalary | EmpDepartment | Designation                |
++----+---------+-----------+---------------+----------------------------+
+|  1 | Aman    |  50000.00 | I.T           | Manager                    |
+|  2 | Alfaj   |  24000.00 | I.T           | Developer                  |
+|  3 | Yash    |  20000.00 | HR            | Associate                  |
+|  4 | Honey   |  40000.00 | I.T           | Network Engineer Associate |
+|  5 | Bob     |  15000.00 | Marketing     | Executive                  |
++----+---------+-----------+---------------+----------------------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT 
+    ->     EmpName,
+    ->     EmpSalary,
+    ->     CASE
+    ->         WHEN EmpSalary < 30000 THEN EmpSalary * 1.1
+    ->         ELSE EmpSalary
+    ->     END AS NewSalary
+    -> FROM
+    ->     employees;
++---------+-----------+-----------+
+| EmpName | EmpSalary | NewSalary |
++---------+-----------+-----------+
+| Aman    |  50000.00 |  50000.00 |
+| Alfaj   |  24000.00 | 26400.000 |
+| Yash    |  20000.00 | 22000.000 |
+| Honey   |  40000.00 |  40000.00 |
+| Bob     |  15000.00 | 16500.000 |
++---------+-----------+-----------+
+5 rows in set (0.00 sec)
+```
+
+- 
