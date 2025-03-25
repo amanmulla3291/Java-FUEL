@@ -974,5 +974,30 @@ mysql> SELECT
 +---------+-----------+-----------+
 5 rows in set (0.00 sec)
 ```
+                                    --- OR ---
+```text
 
-- 
+mysql> SELECT EmpName, EmpSalary, 
+    ->        CASE 
+    ->            WHEN EmpSalary < 30000 THEN EmpSalary * 1.1
+    ->            ELSE EmpSalary 
+    ->        END AS NewSalary,
+    ->        CASE
+    ->            WHEN EmpSalary < 30000 THEN EmpSalary * 0.1
+    ->            ELSE 0
+    ->        END AS Increment
+    -> FROM employees;
++---------+-----------+-----------+-----------+
+| EmpName | EmpSalary | NewSalary | Increment |
++---------+-----------+-----------+-----------+
+| Aman    |  50000.00 |  50000.00 |         0 |
+| Alfaj   |  24000.00 | 26400.000 |  2400.000 |
+| Yash    |  20000.00 | 22000.000 |  2000.000 |
+| Honey   |  40000.00 |  40000.00 |         0 |
+| Bob     |  15000.00 | 16500.000 |  1500.000 |
++---------+-----------+-----------+-----------+
+5 rows in set (0.01 sec)
+
+```
+
+
