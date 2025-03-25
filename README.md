@@ -634,7 +634,7 @@ HashMap(c)      SortedMap()         HashTable
 1. HashMap()
 2. LinkedHashMap
 
-6. One key and one value together we call it as a entry, therefore in order map in a collection we call it as an entries.
+6. One key and one value together we call it as an entry, therefore in order map in a collection we call it as an entries.
 
 ### Imp methods used w.r.t Map
 1. Put()
@@ -651,4 +651,291 @@ HashMap:
 1. It is a predefined class which iss stored into `java.util` package and introduced from ``jdk 1.2``.
 2. In HashMap insertion order is not maintained.
 3. In HashMap duplicates are allowed but only in `values/elements` not in `keys`.
-4. 
+
+### LinkedHashMap
+1. It is a pre-defined class which is stored into ``java.util`` package, and it is introduced in ``jdk 1.2``.
+2. LinkedHashMap does follow insertion order or maintain the insertion order.
+3. For Iterating with the help of keys:
+    ```Set<String> str = lm.keySet();```
+4. For Iterating with the help of values:
+    ````Collection <Integer> str = lm.values();````
+
+### TreeMap
+1. It is a pre-defined class which is stored into ``java.util`` package, and it is introduced in ``jdk 1.2``.
+2. TreeMap maintains sorted order i.e. Sorting based on the keys in ascending order.
+3. Example:
+```
+lm.put("Sam", 1234567);
+lm.put("Tim", 1234567);
+```
+
+Here’s the content rewritten in proper Markdown format:
+
+---
+
+**Date:** 25/03/2025
+
+## MySQL
+
+### Database:
+A database is an organized collection of interrelated data or a structured collection.
+
+1. **DBMS (Database Management System):**  
+   It is a type of software used to manage multiple databases.
+
+2. **RDBMS (Relational Database Management System):**  
+   It is software that follows the relational model. In this model, data is stored in two-dimensional tables.
+
+3. `RDBMS` is an extension of `DBMS`.
+
+4. Various RDBMS software available in the market:
+    - **MySQL:** Owned by Oracle Corporation.
+    - **Oracle:** Also owned by `Oracle Corporation`.
+    - **Postgres:** Open-source RDBMS software.
+    - **SQL Server:** Owned by `Microsoft`.
+    - **DB2:** Owned by `IBM`.
+
+---
+
+## keynotes
+
+**Note:** Every RDBMS software is essentially a DBMS software, but the reverse is not true.  
+*Example:* MongoDB is a DBMS software, but it is not an RDBMS software.
+
+---
+
+## SQL (Structured Query Language)
+
+To work with `RDBMS` software, we need to use SQL, which stands for Structured Query Language. It is an interface that enables us to interact with any kind of `RDBMS` software.
+
+### Important Notes:
+1. Whenever we install RDBMS software, a database is automatically created at the physical level (i.e., hard disk).
+2. Each `RDBMS` software has a key component called the **database engine**, which executes SQL commands (statements).
+3. To execute any SQL commands using the database engine, we require a client application.
+    - During MySQL installation, the `mysql` command-line client is provided to execute SQL statements with the database engine.
+    - GUI clients like *MySQL Workbench* can also be installed for MySQL.
+
+---
+
+## SQL Queries
+
+- SQL is **case-sensitive**.
+- SQL language comprises several predefined commands:
+    1. **DDL** - Data Definition Language
+    2. **DML** - Data Manipulation Language
+    3. **DRL** - Data Retrieval Language
+    4. **TCL** - Transaction Control Language
+    5. **DCL** - Decision Control Language
+
+```plaintext
+In real-time application development, Java developers are only permitted to perform DML, DRL, and DCL commands, while other commands are typically used by the DBA.
+```
+
+---
+
+### 1. DDL (Data Definition Language)
+
+DDL commands are used to create, alter, drop, truncate, or rename data.
+
+**To add a column to a table:**
+
+```sql
+ALTER TABLE table1 ADD State VARCHAR(50);
+```
+
+---
+
+### 2. DML (Data Manipulation Language)
+
+DML commands allow us to insert, delete, or update data.
+
+**Example of updating data:**
+
+```sql
+UPDATE table1 SET State = 'Mumbai' WHERE id = 102;
+```
+
+---
+
+### 3. DRL (Data Retrieval Language)
+
+In DRL, we retrieve data from the database.
+
+---
+
+### 4. TCL (Transaction Control Language)
+
+TCL commands handle transactions in the database.
+
+---
+
+### 5. DCL (Decision Control Language)
+
+DCL commands manage permissions and access controls in the database.
+
+---
+
+### Example: Inserting Data into a Table
+
+**Creating a table (id, name, city, country) and inserting values:**
+
+```sql
+INSERT INTO example (id, name, city, country) VALUES (2, 'Sajeed', 'Dhaisar', 'India');
+INSERT INTO example (id, name, city, country) VALUES (3, 'Nihal', 'Dhaisar', 'India');
+INSERT INTO example (id, name, city, country) VALUES (4, 'Mona', 'Dhaisar', 'India');
+INSERT INTO example (id, name, city, country) VALUES (5, 'Yash', 'Urun-Islampur', 'India');
+INSERT INTO example (id, name, city, country) VALUES (6, 'Aamir', 'Karad', 'India');
+INSERT INTO example (id, name, city, country) VALUES (7, 'Farhan', 'Mumbai', 'India');
+INSERT INTO example (id, name, city, country) VALUES (8, 'Shahrukh', 'Dubai', 'Saudi Arabia');
+INSERT INTO example (id, name, city, country) VALUES (9, 'Tahir', 'Tamabve', 'India');
+```
+
+---
+
+### Additional Note
+
+```note
+We cannot use the `OR` statement to define a range.
+```
+
+```plaintext
+mysql> SELECT * FROM example WHERE id in(1,3,5,6);
+
++----+-------+---------------+---------+
+| id | name  | city          | country |
++----+-------+---------------+---------+
+|  1 | Aman  | Islampur      | India   |
+|  3 | Nihal | Dhaisar       | India   |
+|  5 | Yash  | Urun-Islampur | India   |
+|  6 | Aamir | Karad         | India   |
++----+-------+---------------+---------+
+```
+```plaintext
+mysql> SELECT * FROM example order by name ASC;
++----+----------+---------------+--------------+
+| id | name     | city          | country      |
++----+----------+---------------+--------------+
+|  6 | Aamir    | Karad         | India        |
+|  1 | Aman     | Islampur      | India        |
+|  7 | Farhan   | Mumbai        | India        |
+|  4 | Mona     | Dhaisar       | India        |
+|  3 | Nihal    | Dhaisar       | India        |
+|  2 | Sajeed   | Dhaisar       | India        |
+|  8 | Shahrukh | Dubai         | Saudi Arabia |
+|  9 | Tahir    | Tamabve       | India        |
+|  5 | Yash     | Urun-Islampur | India        |
++----+----------+---------------+--------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM example order by name DESC;
++----+----------+---------------+--------------+
+| id | name     | city          | country      |
++----+----------+---------------+--------------+
+|  5 | Yash     | Urun-Islampur | India        |
+|  9 | Tahir    | Tamabve       | India        |
+|  8 | Shahrukh | Dubai         | Saudi Arabia |
+|  2 | Sajeed   | Dhaisar       | India        |
+|  3 | Nihal    | Dhaisar       | India        |
+|  4 | Mona     | Dhaisar       | India        |
+|  7 | Farhan   | Mumbai        | India        |
+|  1 | Aman     | Islampur      | India        |
+|  6 | Aamir    | Karad         | India        |
++----+----------+---------------+--------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM example order by city DESC;
++----+----------+---------------+--------------+
+| id | name     | city          | country      |
++----+----------+---------------+--------------+
+|  5 | Yash     | Urun-Islampur | India        |
+|  9 | Tahir    | Tamabve       | India        |
+|  7 | Farhan   | Mumbai        | India        |
+|  6 | Aamir    | Karad         | India        |
+|  1 | Aman     | Islampur      | India        |
+|  8 | Shahrukh | Dubai         | Saudi Arabia |
+|  2 | Sajeed   | Dhaisar       | India        |
+|  3 | Nihal    | Dhaisar       | India        |
+|  4 | Mona     | Dhaisar       | India        |
++----+----------+---------------+--------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM example order by country DESC;
++----+----------+---------------+--------------+
+| id | name     | city          | country      |
++----+----------+---------------+--------------+
+|  8 | Shahrukh | Dubai         | Saudi Arabia |
+|  1 | Aman     | Islampur      | India        |
+|  2 | Sajeed   | Dhaisar       | India        |
+|  3 | Nihal    | Dhaisar       | India        |
+|  4 | Mona     | Dhaisar       | India        |
+|  5 | Yash     | Urun-Islampur | India        |
+|  6 | Aamir    | Karad         | India        |
+|  7 | Farhan   | Mumbai        | India        |
+|  9 | Tahir    | Tamabve       | India        |
++----+----------+---------------+--------------+
+9 rows in set (0.00 sec)
+
+```
+
+```plaintext
+mysql> SELECT * FROM example order by id desc limit 2;
++----+----------+---------+--------------+
+| id | name     | city    | country      |
++----+----------+---------+--------------+
+|  9 | Tahir    | Tamabve | India        |
+|  8 | Shahrukh | Dubai   | Saudi Arabia |
++----+----------+---------+--------------+
+2 rows in set (0.00 sec)
+```
+
+
+```Question
+Question: Create a table of employees and create 4 columns Id, EmpName, EmpSalary, and EmpDepartment and Designation.
+The salary range should be 10,000 to 50,000. Have minimum 5 entries:
+1. Write a query detail of all employees earning a salary greater than 50000 where the designation of employee is Manager or Software Developer.
+2. Write a query name of the employee and his job if it only works as a manager.
+```
+
+```Answer
+mysql> INSERT INTO employees (Id, EmpName, EmpSalary, EmpDepartment, Designation)
+    -> VALUES 
+    -> (1, 'Aman', 50000, 'I.T', 'Manager'),
+    -> (2, 'Alfaj', 24000, 'I.T', 'Developer'),
+    -> (3, 'Yash', 20000, 'HR', 'Associate'),
+    -> (4, 'Honey', 40000, 'I.T', 'Network Engineer Associate'),
+    -> (5, 'Bob', 15000, 'Marketing', 'Executive');
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from employees;
++----+---------+-----------+---------------+----------------------------+
+| Id | EmpName | EmpSalary | EmpDepartment | Designation                |
++----+---------+-----------+---------------+----------------------------+
+|  1 | Aman    |  50000.00 | I.T           | Manager                    |
+|  2 | Alfaj   |  24000.00 | I.T           | Developer                  |
+|  3 | Yash    |  20000.00 | HR            | Associate                  |
+|  4 | Honey   |  40000.00 | I.T           | Network Engineer Associate |
+|  5 | Bob     |  15000.00 | Marketing     | Executive                  |
++----+---------+-----------+---------------+----------------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from employees where EmpSalary > 50000;
+Empty set (0.00 sec)
+
+mysql> select * from employees where EmpSalary >= 50000;
++----+---------+-----------+---------------+-------------+
+| Id | EmpName | EmpSalary | EmpDepartment | Designation |
++----+---------+-----------+---------------+-------------+
+|  1 | Aman    |  50000.00 | I.T           | Manager     |
++----+---------+-----------+---------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select EmpName, Designation from employees where Designation = 'Manager';
++---------+-------------+
+| EmpName | Designation |
++---------+-------------+
+| Aman    | Manager     |
++---------+-------------+
+1 row in set (0.00 sec)
+```
+
