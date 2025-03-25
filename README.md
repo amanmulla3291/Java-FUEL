@@ -997,7 +997,41 @@ mysql> SELECT EmpName, EmpSalary,
 | Bob     |  15000.00 | 16500.000 |  1500.000 |
 +---------+-----------+-----------+-----------+
 5 rows in set (0.01 sec)
+```
+**Solution by sir**
+```text
+mysql> update employees set EmpSalary=EmpSalary+(EmpSalary*10/100) where EmpSalary<=55000;
+Query OK, 5 rows affected (0.03 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql> select * from employees;                                                            
++----+---------+-----------+---------------+----------------------------+
+| Id | EmpName | EmpSalary | EmpDepartment | Designation                |
++----+---------+-----------+---------------+----------------------------+
+|  1 | Aman    |  55000.00 | I.T           | Manager                    |
+|  2 | Alfaj   |  26400.00 | I.T           | Developer                  |
+|  3 | Yash    |  22000.00 | HR            | Associate                  |
+|  4 | Honey   |  44000.00 | I.T           | Network Engineer Associate |
+|  5 | Bob     |  16500.00 | Marketing     | Executive                  |
++----+---------+-----------+---------------+----------------------------+
+5 rows in set (0.00 sec)
 
 ```
-
-
+**Question 4 :**
+write down a query of a data Employee ID and EmpName if they are working in department of I.T and Marketing where the EmpSalary is between 30000 and 55000.
+```text
+    SELECT Id AS EmployeeId, EmpName
+    FROM employees
+    WHERE EmpDepartment IN ('I.T', 'Marketing')
+    AND EmpSalary BETWEEN 30000 AND 55000;
+```
+**Output**
+```
++------------+---------+
+| EmployeeId | EmpName |
++------------+---------+
+|          1 | Aman    |
+|          4 | Honey   |
++------------+---------+
+2 rows in set (0.00 sec)
+```
