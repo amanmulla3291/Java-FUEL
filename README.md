@@ -1055,4 +1055,3 @@ A primary key column helps uniquely identify each record in a table.
     - The primary key and foreign key columns must have the **same data type**, though their names can differ.
 - Foreign key columns can accept **duplicates** and **NULL values**.
 - Foreign keys help define **parent-child relationships** among tables.
-
