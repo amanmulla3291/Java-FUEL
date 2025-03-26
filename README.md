@@ -1035,3 +1035,24 @@ write down a query of a data Employee ID and EmpName if they are working in depa
 +------------+---------+
 2 rows in set (0.00 sec)
 ```
+
+---
+
+(26/03/2025)
+## Primary Key
+- A `DB engine` automatically creates an index for a column defined as a primary key.
+- Values in a primary key column **cannot be duplicated** and **cannot be NULL**.
+- A primary key is unique and different from other constraints. While a table can have multiple unique constraints, it can only have **one primary key**.
+- If we want to apply a primary key across multiple columns in a table, it is referred to as a **composite key**.
+
+**Note:**  
+A primary key column helps uniquely identify each record in a table.
+
+## Foreign Key
+- A foreign key helps enforce **referential integrity**.
+- It establishes a relationship between two tables:
+    - The foreign key column in the child table must reference the primary key column in the parent table.
+    - The primary key and foreign key columns must have the **same data type**, though their names can differ.
+- Foreign key columns can accept **duplicates** and **NULL values**.
+- Foreign keys help define **parent-child relationships** among tables.
+
