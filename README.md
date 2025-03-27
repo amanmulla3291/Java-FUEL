@@ -1127,8 +1127,8 @@ A primary key column helps uniquely identify each record in a table.
     1. Delete the course from the course table which is not enrolled by students.
     2. Update the course_duartion of the Ai with Python from 1 month to 3 months.   
 
-## Answer of problem statement:
-    
+## Answer of problem statement
+
     ```sql
     CREATE TABLE course(
         course_id INT PRIMARY KEY,
@@ -1235,7 +1235,6 @@ mysql> select * from student; select * from course;
        3. **FULL OUTER JOIN**
     4. **NATURAL JOIN**
     5. **SELF JOIN**
-    
 
 ---
 
@@ -1350,6 +1349,7 @@ mysql> SELECT user.user_name, message.message_content FROM user INNER JOIN messa
 ```sql
 mysql> SELECT user.user_name, COUNT(message.message_id) FROM user INNER JOIN message ON user.user_id = message.user_id GROUP BY user.user_name;
 ```
+
 ```plaintext
 +--------------+---------------------------+
 | user_name    | COUNT(message.message_id) |
@@ -1395,6 +1395,7 @@ mysql> SELECT user.user_name FROM user INNER JOIN message ON user.user_id = mess
 ```sql
 mysql> SELECT user.user_name, user.user_email, message.message_content FROM user INNER JOIN message ON user.user_id = message.user_id;
 ```
+
 ```plaintext
 +--------------+--------------------------+--------------------------------+
 | user_name    | user_email               | message_content                |
