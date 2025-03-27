@@ -20,13 +20,15 @@
 ## Data Types
 
 1. **Primitive Data Types**:
-  - `byte`, `short`, `int`, `long` – for integers.
-  - `float`, `double` – for decimal values.
-  - `char` – for characters.
-  - `boolean` – for `true` or `false`.
+
+- `byte`, `short`, `int`, `long` – for integers.
+- `float`, `double` – for decimal values.
+- `char` – for characters.
+- `boolean` – for `true` or `false`.
 
 2. **Non-Primitive Data Types**:
-  - Strings, Arrays, Classes, and Interfaces.
+
+- Strings, Arrays, Classes, and Interfaces.
 
 ### Example: Primitive vs. Non-Primitive
 
@@ -42,13 +44,16 @@ String text = "Hello, Java!"; // Non-Primitive
 ## Control Statements
 
 1. **Decision-Making Statements**:
-  - `if`, `if-else`, `switch`
+
+- `if`, `if-else`, `switch`
 
 2. **Looping Statements**:
-  - `for`, `while`, `do-while`
+
+- `for`, `while`, `do-while`
 
 3. **Jumping Statements**:
-  - `break`, `continue`
+
+- `break`, `continue`
 
 ### Example: Using a Loop
 
@@ -94,12 +99,14 @@ public class Main {
 
 1. **Definition**: A block of code used to initialize objects.
 2. **Characteristics**:
-  - Same name as the class.
-  - No return type, not even `void`.
+
+- Same name as the class.
+- No return type, not even `void`.
 
 1. **Types of Constructors**:
-  - Default Constructor.
-  - Parameterized Constructor.
+
+- Default Constructor.
+- Parameterized Constructor.
 
 ### Example: Parameterized Constructor
 
@@ -159,6 +166,7 @@ public class Main {
 **Date:** 11/02/2025
 
 ## Overview
+
 A banking system utilizing **encapsulation**, with the following data members:
 
 - **Balance**
@@ -167,8 +175,9 @@ A banking system utilizing **encapsulation**, with the following data members:
 - **Deposit Amount**
 
 ### Validation Rules
+
 - If a user attempts to withdraw an amount **greater** than their balance, display:
-    - **"Insufficient Balance"**
+  - **"Insufficient Balance"**
 - If the balance is **sufficient**, deduct the withdrawal amount and display the remaining balance.
 
 [BankingSystem](src/BankingSystem)
@@ -178,16 +187,19 @@ A banking system utilizing **encapsulation**, with the following data members:
 ## Method Binding
 
 ## Polymorphism
+
 Polymorphism refers to the ability of a method to take multiple forms, allowing different behaviors based on the object invoking it.
 
 ### Types of Polymorphism
 
 #### 1. Compile-Time Polymorphism
+
 - Achieved through **method overloading**.
 - Also known as **early binding** or **static binding**.
 - The method to be executed is determined **at compile time** by the compiler.
 
 #### 2. Run-Time Polymorphism
+
 - Achieved through **method overriding**.
 - Also known as **late binding** or **dynamic binding**.
 - The method to be executed is determined **at runtime** by the JVM.
@@ -197,19 +209,23 @@ Polymorphism refers to the ability of a method to take multiple forms, allowing 
 **Date:** 12/03/2025
 
 ## Abstraction
+
 Abstraction is the process of hiding implementation details while exposing only essential functionalities to the user. This is achieved using **abstract classes** or **interfaces**.
 
 ### Key Concepts of Abstraction
+
 1. **Abstract class or interface** is required for abstraction.
 2. Uses an **"is-a" relationship** (Inheritance).
 3. Utilizes **method overriding**.
 4. Supports **upcasting**.
 
-### Important Notes:
+### Important Notes
+
 - An **abstract class** cannot be instantiated.
 - An **abstract method** cannot be **private**, **static**, or **final**.
 
 ### Abstract Concepts
+
 - `abstract` is a **keyword** used with classes and methods.
 - A class **without** the `abstract` keyword is called a **concrete class**.
 - A **concrete class** can contain **only concrete methods**.
@@ -219,13 +235,14 @@ Abstraction is the process of hiding implementation details while exposing only 
 - An **abstract method** has **only a declaration** and **no implementation**.
 - All abstract methods **must** be declared using the `abstract` keyword.
 
-### Additional Notes:
+### Additional Notes
+
 - A class that **inherits** an abstract class must **override all** the abstract methods.
 - If a class **inherits** an abstract class but does **not** override its abstract methods, it must be declared as an **abstract class** itself.
 
 ---
 
-### Task:
+### Task
 
 **Question:**
 Develop an abstract class with a minimum of five abstract methods:
@@ -274,6 +291,7 @@ public class Main {
 **Date:** 13/03/2025
 
 ## Interface
+
 [Interface Example](src/Interface)
 
 - Interface is a java type definition which has to be declared using interface keyword.
@@ -292,10 +310,10 @@ public class Main {
 
 ### ![img.png](Img-Files/img1.png)
 
-
 **Date: 14/03/2025**
 
 ## Exception Handling
+
 [Exception_Handling Example](src/Exception_Handling)
 
 1. Exception is an event or interpretation which stop the execution of a program it is called as an Exception.
@@ -307,6 +325,7 @@ public class Main {
 5. Typically, an exception is handled using ```Try Block & Catch Block.```
 
 ### Try Block & Catch Block
+
 1. The critical line of code which gives and exception should be written inside the ```try block```.
 2. If there is a try block, mandatory catch block should be present or vice versa.
 3. The solution should always be written within the catch block.
@@ -316,8 +335,8 @@ public class Main {
 7. It is always a good practice to handle the super class exception as the last catch block.
 8. We can use the nested try and catch block in program.
 
-
 *Syntax:*
+
 ```
 try {
     // Code that might throw an exception
@@ -329,6 +348,7 @@ try {
 ### Java Exception Hierarchy
 
 ## Throwable (Root Class)
+
 - **Exception** (Checked)
   - **IOException**
     - FileNotFoundException
@@ -364,11 +384,13 @@ try {
   ```
 
 ## Internally
+
 1. An object of arithmetic exception is created.
 2. the object is thrown to suitable catch block.
 3. It is caught by the catch block.
 
-### Imp method present is throwable class:
+### Imp method present is throwable class
+
 1. PrintStackTrace()
     This method is used to get complete info about the exception.
 2. GetMessage()
@@ -377,31 +399,36 @@ try {
    Note : [Demo3.java](src/Exception_Handling/Demo3.java)
 
 ### Finally Block
+
 1. The set of instructions which has to be executed all the time, has to return within the finally block.
 2. Finally block is block of code which it executed all the time. i.e. irrespective of Exception occur or not.
 
 ---
 
 ### Checked Exception
+
 1. Checked exception is known by the compiler.
 2. It can be handled immediately.
 3. It is called as a ```extinct exception```
 
 ### Unchecked Exception
+
 1. It can be handled not immediately.
 2. It is also called as an ``Extend Runtime exception.``
 
 [Example of Checked and Unchecked Exception](src/Exception_Handling/Demo4.java)
 
-
 ---
- ## Throws
+
+## Throws
+
 1. Throws is an indication to the caller about the possibility of an Exception.
 2. Throws is used to propagate an exception.
 3. Throws is generally used with check exception.
 4. Typically, we use throws with methods, and it can use ``throws`` w.r.t constructor as well.
 
-## Custom / User Defined Exception:
+## Custom / User Defined Exception
+
 1. Based on object or project it is some time necessary to create our own exception and those exception which the user/programmer create are called as a custom exception or user defined exception.
 2. Rules for working with custom exception:
    1. Create a class with Exception name.
@@ -409,13 +436,14 @@ try {
    3. Create an obj of the exception class and invoke/throw obj of the exception.
    4. Handle it using try & catch block.
 
-
 **Date: 15/03/2025**
 
 ## Arrays
+
 Bubble Selection
 
 ## Collection Framework
+
 **Date:17/03/2025**
 
 | Array                              | Collection                                 |
@@ -426,11 +454,13 @@ Bubble Selection
 | 4. Array does not support generics | 4. Collection supports generics            |
 
 ### Collections
+
 Collection is a pre-defined interface.
 It is stored into ``java.util`` package.
 Collection means group of objects.
 
 ## Hierarchy of Collection framework in Java
+
 ![hierarchy-of-collection-framework-in-java.webp](Img-Files/hierarchy-of-collection-framework-in-java.webp)
 
 Pre-defined methods in collection interface
@@ -457,18 +487,21 @@ It is a predefined interface. `List` is stored in the `java.util` package.
 `List` was introduced in **JDK 1.2**.
 
 ### **Types of List:**
+
 - `ArrayList`
 - `LinkedList`
 - `Vector`
 - `Stack`
 
 ### **Specifications of List:**
+
 1. List stores data in **insertion order**.
 2. **Duplicates** are allowed in a List.
 3. List is **index-based**.
 4. `null` values can be inserted in a List.
 
 #### **Example:**
+
 ```java:
 List L1 = new ArrayList();
           new LinkedList();
@@ -477,17 +510,20 @@ List L1 = new ArrayList();
 ```
 
 ### **1.1 Array List**
+
 1. It is a pre-defined class.
 2. it is stored into ``java.util`` package.
 3. It is introduced from ``jdk 1.2``.
 
 ### **Specification of Array List**
+
 1. The initial capacity of array list is 10.
 2. Incremental Capacity of Array List is
    ``Incremental Capacity = { (Current Capacity / 2) * 3 } + 1``
 3. Array List is ``re-sizable array`` or ``growable array``.
 
 [Example](src/ArrayList/Demo.java)
+
 ```java
 package ArrayList;
 
@@ -507,9 +543,10 @@ public class Demo {
 }
 ```
 
-
 **Date:18/03/2025**
+
 ### **1.2 Linked List**
+
 1. Linked List is a predefined class.
 2. It is stored into ``java.util`` package.
 3. It is introduced from ``JDK 1.2``.
@@ -517,6 +554,7 @@ public class Demo {
 ![LinkedList.png](Img-Files/LinkedList.png)
 
 ### **Specification of Linked List**
+
 1. The initial capacity of Linked List is zero or null.
 2. The Incremental capacity of Linked List is 1 or depends upon object.
 
@@ -546,7 +584,9 @@ public class Demo1 {
 ```
 
 ### For Each Loop
+
 Example:
+
 ```java
         for (int i : Arr){
             if (i%2==0){
@@ -555,12 +595,12 @@ Example:
 ```
 
 ## Vector
+
 1. It is a pre-defined class which is stored into ``java.util`` package.
 2. It is introduced from ```jdk 1.2```.
 3. Initial Capacity of vector is ``10``.
 4. Incremental Capacity of vector is ``CurrentCapacity * 2``.
 5. It is also called as a ``Thread-Safe`` (synchronized).
-
 
 Array List is not thread same.                                  Vector is thread same.
 Array list three constructors.                                  Vector have 4 constructor
@@ -569,9 +609,9 @@ Incremental Capacity of Array List is
 It is introduced from ``jdk 1.2``                               It is introduced from ``jdk 1.0``
 
 ## Set
+
 Set is a pre-defined interface which is stored into ``java.util`` package.
 It is introduced from ``jdk 1.2``
-
 
 | Set                                             | List                                     |
 |-------------------------------------------------|------------------------------------------|
@@ -580,14 +620,15 @@ It is introduced from ``jdk 1.2``
 | ``Set`` is not an index based.                  | ``List`` is index based.                 |
 | Null value is allowed in ``set`` only one time. | Null values allowed multiple times.      |
 
+### HashSet
 
-### HashSet:
 1. It is pre-defined class which is stored in ``java.util`` package.
 2. It is also underlined DSA of collection.
 3. Initial capacity of HashSet is ``16``.
 4. ```Incremental Capacity is 75 % of Initial capacity.```
 
 ### LinkHashSet
+
 1. LinkHashSet is a pre-defined class which stored into ``java.util`` package.
 2. It is introduced from ``jdk 1.4``
 3. It is the updated version of HashSet.
@@ -595,25 +636,26 @@ It is introduced from ``jdk 1.2``
 5. LinkHashSet follow ``insertion order``.
 6. Initial Capacity `16`.
 
-
 ### TreeSet
+
 1. It is a pre-defined class and stored in ``jaav.util`` package.
 2. It is introduced from ``jdk 1.2``
 3. TreeHashSet it contains ``compareTo()``.
 ![img.png](Img-Files/TreeSet.png)
 
-
 **Date: 22/03/2025**
-### Map:
+
+### Map
+
 1. Map is a pre-defined interface which is stored into ``java.util`` package.
 2. It is introduced from `jdk 1.2`.
 3. Map store the data with the help of keys and values and group of keys and values we call it as an element or ``entries``.
 
-| Key | Value | 
-|-----|-------| 
-| 101 | Tom   | 
-| 102 | Sam   | 
-| 103 | Sim   | 
+| Key | Value |
+|-----|-------|
+| 101 | Tom   |
+| 102 | Sam   |
+| 103 | Sim   |
 
 Hierarchy of Map Interface
 
@@ -629,14 +671,16 @@ HashMap(c)      SortedMap()         HashTable
 3. Keys cannot be duplicate, values can be duplicate.
 4. Map is pre-defined interface present in `java.util` package.
 5. The implementation classes of the map.
-   
+
 **Classes**
+
 1. HashMap()
 2. LinkedHashMap
 
 6. One key and one value together we call it as an entry, therefore in order map in a collection we call it as an entries.
 
 ### Imp methods used w.r.t Map
+
 1. Put()
 2. Get()
 3. Clear()
@@ -647,12 +691,15 @@ HashMap(c)      SortedMap()         HashTable
 8. KeySet()
 
 ### Map()=>
+
 HashMap:
+
 1. It is a predefined class which iss stored into `java.util` package and introduced from ``jdk 1.2``.
 2. In HashMap insertion order is not maintained.
 3. In HashMap duplicates are allowed but only in `values/elements` not in `keys`.
 
 ### LinkedHashMap
+
 1. It is a pre-defined class which is stored into ``java.util`` package, and it is introduced in ``jdk 1.2``.
 2. LinkedHashMap does follow insertion order or maintain the insertion order.
 3. For Iterating with the help of keys:
@@ -661,9 +708,11 @@ HashMap:
     ````Collection <Integer> str = lm.values();````
 
 ### TreeMap
+
 1. It is a pre-defined class which is stored into ``java.util`` package, and it is introduced in ``jdk 1.2``.
 2. TreeMap maintains sorted order i.e. Sorting based on the keys in ascending order.
 3. Example:
+
 ```
 lm.put("Sam", 1234567);
 lm.put("Tim", 1234567);
@@ -677,7 +726,8 @@ Here’s the content rewritten in proper Markdown format:
 
 ## MySQL
 
-### Database:
+### Database
+
 A database is an organized collection of interrelated data or a structured collection.
 
 1. **DBMS (Database Management System):**  
@@ -708,7 +758,8 @@ A database is an organized collection of interrelated data or a structured colle
 
 To work with `RDBMS` software, we need to use SQL, which stands for Structured Query Language. It is an interface that enables us to interact with any kind of `RDBMS` software.
 
-### Important Notes:
+### Important Notes
+
 1. Whenever we install RDBMS software, a database is automatically created at the physical level (i.e., hard disk).
 2. Each `RDBMS` software has a key component called the **database engine**, which executes SQL commands (statements).
 3. To execute any SQL commands using the database engine, we require a client application.
@@ -810,6 +861,7 @@ mysql> SELECT * FROM example WHERE id in(1,3,5,6);
 |  6 | Aamir | Karad         | India   |
 +----+-------+---------------+---------+
 ```
+
 ```plaintext
 mysql> SELECT * FROM example order by name ASC;
 +----+----------+---------------+--------------+
@@ -888,7 +940,6 @@ mysql> SELECT * FROM example order by id desc limit 2;
 2 rows in set (0.00 sec)
 ```
 
-
 ```Question
 Question: Create a table of employees and create 4 columns Id, EmpName, EmpSalary, and EmpDepartment and Designation.
 The salary range should be 10,000 to 50,000. Have minimum 5 entries:
@@ -939,8 +990,8 @@ mysql> select EmpName, Designation from employees where Designation = 'Manager';
 1 row in set (0.00 sec)
 ```
 
-
 - Write a query show the database of employee name and employee salary with hike of 10% if the salary is < 30,000.
+
 ```text
 mysql> select * from employees;
 +----+---------+-----------+---------------+----------------------------+
@@ -974,7 +1025,9 @@ mysql> SELECT
 +---------+-----------+-----------+
 5 rows in set (0.00 sec)
 ```
+
                                     --- OR ---
+
 ```text
 
 mysql> SELECT EmpName, EmpSalary, 
@@ -998,7 +1051,9 @@ mysql> SELECT EmpName, EmpSalary,
 +---------+-----------+-----------+-----------+
 5 rows in set (0.01 sec)
 ```
+
 **Solution by sir**
+
 ```text
 mysql> update employees set EmpSalary=EmpSalary+(EmpSalary*10/100) where EmpSalary<=55000;
 Query OK, 5 rows affected (0.03 sec)
@@ -1017,15 +1072,19 @@ mysql> select * from employees;
 5 rows in set (0.00 sec)
 
 ```
+
 **Question 4 :**
 write down a query of a data Employee ID and EmpName if they are working in department of I.T and Marketing where the EmpSalary is between 30000 and 55000.
+
 ```text
     SELECT Id AS EmployeeId, EmpName
     FROM employees
     WHERE EmpDepartment IN ('I.T', 'Marketing')
     AND EmpSalary BETWEEN 30000 AND 55000;
 ```
+
 **Output**
+
 ```
 +------------+---------+
 | EmployeeId | EmpName |
@@ -1039,7 +1098,9 @@ write down a query of a data Employee ID and EmpName if they are working in depa
 ---
 
 (26/03/2025)
+
 ## Primary Key
+
 - A `DB engine` automatically creates an index for a column defined as a primary key.
 - Values in a primary key column **cannot be duplicated** and **cannot be NULL**.
 - A primary key is unique and different from other constraints. While a table can have multiple unique constraints, it can only have **one primary key**.
@@ -1049,9 +1110,11 @@ write down a query of a data Employee ID and EmpName if they are working in depa
 A primary key column helps uniquely identify each record in a table.
 
 ## Foreign Key
+
 - A foreign key helps enforce **referential integrity**.
 - It establishes a relationship between two tables:
-    - The foreign key column in the child table must reference the primary key column in the parent table.
-    - The primary key and foreign key columns must have the **same data type**, though their names can differ.
+  - The foreign key column in the child table must reference the primary key column in the parent table.
+  - The primary key and foreign key columns must have the **same data type**, though their names can differ.
 - Foreign key columns can accept **duplicates** and **NULL values**.
 - Foreign keys help define **parent-child relationships** among tables.
+  
