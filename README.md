@@ -4,7 +4,7 @@
 
 **Date:** 14/03/2025
 
-# Core Java Basics
+## Core Java Basics
 
 ## Java Overview
 
@@ -26,7 +26,7 @@
 - `char` – for characters.
 - `boolean` – for `true` or `false`.
 
-2. **Non-Primitive Data Types**:
+1. **Non-Primitive Data Types**:
 
 - Strings, Arrays, Classes, and Interfaces.
 
@@ -47,11 +47,11 @@ String text = "Hello, Java!"; // Non-Primitive
 
 - `if`, `if-else`, `switch`
 
-2. **Looping Statements**:
+1. **Looping Statements**:
 
 - `for`, `while`, `do-while`
 
-3. **Jumping Statements**:
+2. **Jumping Statements**:
 
 - `break`, `continue`
 
@@ -219,7 +219,7 @@ Abstraction is the process of hiding implementation details while exposing only 
 3. Utilizes **method overriding**.
 4. Supports **upcasting**.
 
-### Important Notes
+### Key Notes
 
 - An **abstract class** cannot be instantiated.
 - An **abstract method** cannot be **private**, **static**, or **final**.
@@ -1117,4 +1117,50 @@ A primary key column helps uniquely identify each record in a table.
   - The primary key and foreign key columns must have the **same data type**, though their names can differ.
 - Foreign key columns can accept **duplicates** and **NULL values**.
 - Foreign keys help define **parent-child relationships** among tables.
-  
+
+## Problem Statement
+
+    Create a table of courses and students in table 1 i.e. course , create three columns course_id, course_name, course_duration.
+    In table 2 i.e. student, create four columns student_id, student_name, student_edu_bg, course_id.
+    Connect both tables with the help of foreign key.
+    as well as use cascade option.
+    1. Delete the course from the course table which is not enrolled by students.
+    2. Update the course_duartion of the Ai with Python from 1 month to 3 months.   
+
+## Answer of problem statement:
+    
+    ```sql
+    CREATE TABLE course(
+        course_id INT PRIMARY KEY,
+        course_name VARCHAR(50),
+        course_duration VARCHAR(50)
+    );
+
+    CREATE TABLE student(
+        student_id INT PRIMARY KEY,
+        student_name VARCHAR(50),
+        student_edu_bg VARCHAR(50),
+        course_id INT,
+        FOREIGN KEY (course_id) REFERENCES course(course_id) ON DELETE CASCADE
+    );
+
+    INSERT INTO course VALUES(1, 'Java', '1 month');
+    INSERT INTO course VALUES(2, 'Python', '1 month');
+    INSERT INTO course VALUES(3, 'AI', '1 month');
+    INSERT INTO course VALUES(4, 'ML', '1 month');
+    INSERT INTO course VALUES(5, 'DL', '1 month');
+    INSERT INTO course VALUES(6, 'Python', '1 month');
+
+
+    INSERT INTO student VALUES(1, 'Aman', 'B.Tech', 1);
+    INSERT INTO student VALUES(2, 'Alfaj', 'B.Tech', 2);
+    INSERT INTO student VALUES(3, 'Yash', 'B.Tech', 3);
+    INSERT INTO student VALUES(4, 'Honey', 'B.Tech', 4);
+    INSERT INTO student VALUES(5, 'Bob', 'B.Tech', 5);
+
+    DELETE FROM course WHERE course_id NOT IN (SELECT course_id FROM student);
+    UPDATE course SET course_duration = '3 months' WHERE course_name = 'AI';
+    ```
+
+---
+

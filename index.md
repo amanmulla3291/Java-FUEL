@@ -1,6 +1,7 @@
-## **Step 1: Plan Your Architecture**
+# **Step 1: Plan Your Architecture**
 
-### Overview:
+## Overview
+
 - **Frontend (React):** The interface for users to interact with the system.
 - **Backend (Hyperledger Fabric):** Blockchain to manage signing, verifying, and storing document data.
 - **Database (Optional):** For non-critical data if needed.
@@ -10,7 +11,8 @@
 
 ## **Step 2: Set Up Your Development Environment**
 
-### Install Prerequisites:
+### Install Prerequisites
+
 1. **For React (Frontend):**
     - Node.js and npm: Download from [Node.js](https://nodejs.org/).
     - A code editor (e.g., Visual Studio Code).
@@ -27,7 +29,8 @@
 
 ## **Step 3: Design User Roles and Features**
 
-### User Roles:
+### User Roles
+
 1. **Admin:**
     - Manage user accounts (create/approve/revoke).
     - Oversee documents and roles.
@@ -36,7 +39,8 @@
 3. **Students:**
     - Request and view signed documents.
 
-### Features:
+### Features
+
 - **Digital Signing:** Hash documents and store on blockchain.
 - **Verification:** Compare document hash with blockchain-stored hash.
 - **Document Requesting:** Securely request specific documents.
@@ -46,9 +50,11 @@
 
 ## **Step 4: Set Up Hyperledger Fabric**
 
-### Step-by-Step:
+### Step-by-Step
+
 1. **Download Hyperledger Fabric:**
     - Clone the Fabric samples repository:
+
       ```bash
       git clone https://github.com/hyperledger/fabric-samples.git
       cd fabric-samples
@@ -56,12 +62,14 @@
 
 2. **Install Fabric Binaries and Docker Images:**
    Run the provided script in the `fabric-samples` folder:
+
    ```bash
    ./scripts/bootstrap.sh
    ```
 
 3. **Set Up a Basic Network:**
    Use the `test-network` sample:
+
    ```bash
    cd test-network
    ./network.sh up createChannel -c mychannel -ca
@@ -70,6 +78,7 @@
 4. **Deploy Chaincode (Smart Contract):**
     - Create chaincode for signing, verifying, and managing documents.
     - Deploy it to your channel:
+
       ```bash
       ./network.sh deployCC -ccn digitalSign -ccp ../chaincode/digitalSign -ccl javascript
       ```
@@ -82,11 +91,13 @@
 ## **Step 5: Develop the Chaincode**
 
 Write the smart contract (chaincode) for these operations:
+
 - **Sign Documents:** Generate and store document hash with a signature.
 - **Verify Documents:** Compare new hashes against stored hashes.
 - **Request Documents:** Maintain request logs for admins and faculty.
 
 Example (Node.js chaincode snippet):
+
 ```javascript
 async signDocument(ctx, documentId, hash, signer) {
     const doc = { documentId, hash, signer, timestamp: new Date().toISOString() };
@@ -99,8 +110,10 @@ async signDocument(ctx, documentId, hash, signer) {
 
 ## **Step 6: Develop the Frontend with React**
 
-### Key Steps:
+### Key Steps
+
 1. **Initialize the React Project:**
+
    ```bash
    npx create-react-app digital-signature-system
    cd digital-signature-system
@@ -108,6 +121,7 @@ async signDocument(ctx, documentId, hash, signer) {
 
 2. **Install Dependencies:**
    Use libraries for UI and API communication:
+
    ```bash
    npm install axios react-router-dom material-ui
    ```
@@ -118,6 +132,7 @@ async signDocument(ctx, documentId, hash, signer) {
 4. **API Integration:**
     - Connect React with the Hyperledger Fabric backend using REST APIs.
     - Example API Call:
+
       ```javascript
       const signDocument = async (documentId, hash, signer) => {
           const response = await axios.post('http://localhost:4000/sign', { documentId, hash, signer });
@@ -137,6 +152,7 @@ async signDocument(ctx, documentId, hash, signer) {
 
 2. **Upload Documents:**
    Use the IPFS API to add a document and store its hash on-chain:
+
    ```javascript
    const ipfs = require('ipfs-http-client');
    const client = ipfs.create({ host: 'localhost', port: '5001', protocol: 'http' });
@@ -157,6 +173,7 @@ async signDocument(ctx, documentId, hash, signer) {
 1. **Setup Local Environment:**
     - Run Hyperledger Fabric locally using Docker.
     - Start your React app:
+
       ```bash
       npm start
       ```
@@ -175,6 +192,7 @@ async signDocument(ctx, documentId, hash, signer) {
 1. **Frontend:**
     - Deploy the React app on **Netlify**, **Vercel**, or **GitHub Pages**.
     - Example command for GitHub Pages:
+
       ```bash
       npm run build
       npm install -g gh-pages
@@ -197,13 +215,16 @@ Here’s a categorized collection of prompts tailored for different AI models to
 ---
 
 ### **1. Learning the Fundamentals**
+
 #### **For Conversational Models (e.g., ChatGPT, Claude.ai, Microsoft Copilot):**
+
 - "Explain Hyperledger Fabric to a beginner."
 - "What are smart contracts, and how do they work in Hyperledger Fabric?"
 - "Give me a step-by-step guide to set up Hyperledger Fabric's test network."
 - "How does blockchain ensure immutability of data? Provide examples."
 
 #### **For Coding Assistants (e.g., GitHub Copilot, Amazon CodeWhisperer):**
+
 - "Suggest sample code for deploying a Hyperledger Fabric smart contract."
 - "Generate a simple `signDocument` chaincode function in Node.js."
 - "Create a React component for uploading documents."
@@ -211,12 +232,15 @@ Here’s a categorized collection of prompts tailored for different AI models to
 ---
 
 ### **2. Writing Code**
+
 #### **For Coding Assistants (e.g., GitHub Copilot, Amazon CodeWhisperer):**
+
 - "Generate code for a React form to upload a document and send it to the backend via Axios."
 - "Write a Hyperledger Fabric SDK function to query blockchain data."
 - "Provide code for a role-based React dashboard with routing."
 
 #### **For Conversational Models (e.g., ChatGPT, Claude.ai):**
+
 - "Write an API using Hyperledger Fabric SDK to interact with the blockchain."
 - "Generate chaincode for signing and verifying documents in Hyperledger Fabric."
 - "Optimize a React app for making API calls securely."
@@ -224,7 +248,9 @@ Here’s a categorized collection of prompts tailored for different AI models to
 ---
 
 ### **3. Debugging Code**
+
 #### **For Conversational Models (e.g., ChatGPT, Microsoft Copilot):**
+
 - "My Hyperledger Fabric network is not starting. Here's the error message: [paste error]. What’s the solution?"
 - "Why am I getting a 'No chaincode found' error when querying my Hyperledger Fabric network?"
 - "My React app crashes during API calls to the Hyperledger backend. How can I fix it?"
@@ -232,52 +258,66 @@ Here’s a categorized collection of prompts tailored for different AI models to
 ---
 
 ### **4. Backend Development**
+
 #### **For Conversational Models (e.g., ChatGPT, Claude.ai):**
+
 - "How do I deploy custom chaincode on Hyperledger Fabric?"
 - "What are the best practices for writing secure chaincode?"
 - "Explain Hyperledger Fabric's certificate authority and how to manage user identities."
 
 #### **For Coding Assistants (e.g., GitHub Copilot):**
+
 - "Generate chaincode for storing and retrieving document hashes."
 - "Create a Node.js function to interact with Hyperledger Fabric's chaincode."
 
 ---
 
 ### **5. Frontend Development**
+
 #### **For Conversational Models (e.g., ChatGPT, Claude.ai):**
+
 - "How do I connect a React app with a Hyperledger Fabric backend?"
 - "Explain role-based routing in React with examples."
 - "What’s the best way to make a React app responsive and user-friendly?"
 
 #### **For Coding Assistants (e.g., GitHub Copilot):**
+
 - "Create a React component for document verification using an API."
 - "Write a function in React to display user role-based menus dynamically."
 
 ---
 
 ### **6. Deployment**
+
 #### **For Conversational Models (e.g., ChatGPT, Microsoft Copilot):**
+
 - "How do I deploy Hyperledger Fabric on a free-tier cloud platform like AWS?"
 - "Guide me through deploying a React app on Vercel."
 - "What are some best practices for deploying a blockchain-based system securely?"
 
 #### **For Specialized Models (e.g., Claude.ai, Amazon AI):**
+
 - "How to configure a CI/CD pipeline for deploying blockchain applications?"
 
 ---
 
 ### **7. Document Storage**
+
 #### **For Conversational Models (e.g., Gemini, ChatGPT):**
+
 - "How do I integrate IPFS with a blockchain application?"
 - "Generate a React component for uploading a document to IPFS."
 
 #### **For Coding Assistants (e.g., GitHub Copilot):**
+
 - "Write a Node.js function to upload files to IPFS and store the hash on a blockchain."
 
 ---
 
 ### **8. Optimization and Security**
+
 #### **For Conversational Models (e.g., DeepSeekAI, Claude.ai):**
+
 - "How can I optimize Hyperledger Fabric for performance?"
 - "What are common security vulnerabilities in blockchain projects, and how can I avoid them?"
 - "How do I securely manage private keys for a blockchain-based system?"
@@ -285,7 +325,9 @@ Here’s a categorized collection of prompts tailored for different AI models to
 ---
 
 ### **9. Project Management and Planning**
+
 #### **For Conversational Models (e.g., ChatGPT, Microsoft Copilot):**
+
 - "Create a detailed project plan for building a blockchain-based Digital Signature System."
 - "What are the typical challenges in implementing blockchain projects, and how do I address them?"
 - "Suggest a roadmap to complete a blockchain project in a month."
@@ -293,28 +335,35 @@ Here’s a categorized collection of prompts tailored for different AI models to
 ---
 
 ### **10. Troubleshooting and Peer Learning**
+
 #### **For Conversational Models (e.g., Claude.ai, ChatGPT):**
+
 - "Explain common issues faced during Hyperledger Fabric setup and solutions."
 - "How do I resolve a ‘FABRIC_CA’ error in my Hyperledger Fabric environment?"
 - "What are the best resources or forums for learning React and Hyperledger Fabric quickly?"
 
 ---
 
-### How to Maximize Benefits:
+### How to Maximize Benefits
+
 - **GitHub Copilot & Amazon CodeWhisperer**: Use these inside your IDE for real-time coding suggestions.
 - **ChatGPT, Microsoft Copilot, Claude.ai**: Ideal for brainstorming, debugging, and explanations.
 - **DeepSeekAI & Gemini**: Great for advanced security insights and blockchain-specific solutions.
 - **Amazon AI Services**: Explore ML-powered document management or request handling.
 
 ---
+
 # Prompt 3
+
 ---
 Here is a refined, step-wise list of AI-powered prompts you can use across different AI models to complete your project efficiently. I've organized these prompts according to the **flow of the project** to guide you from start to finish:
 
 ---
 
 ### **Step 1: Project Planning and Architecture**
+
 **For Conversational Models (e.g., ChatGPT, Microsoft Copilot):**
+
 - "Create a detailed project plan for building a Digital Signature System using React and Hyperledger Fabric."
 - "Suggest a modular architecture for integrating React, Hyperledger Fabric, and IPFS."
 - "What are the typical challenges in blockchain-based systems, and how can I address them?"
@@ -323,22 +372,28 @@ Here is a refined, step-wise list of AI-powered prompts you can use across diffe
 ---
 
 ### **Step 2: Setting Up Development Environment**
+
 **For Conversational Models (e.g., ChatGPT, Claude.ai):**
+
 - "Guide me through setting up Hyperledger Fabric's test network locally using Docker."
 - "What are the prerequisites for creating a React app and deploying Hyperledger Fabric?"
 - "Explain how to configure Fabric's certificate authority for role-based identities."
 
 **For Specialized Models (e.g., Claude.ai, DeepSeekAI):**
+
 - "How do I optimize my local setup for Hyperledger Fabric to ensure fast development?"
 
 ---
 
 ### **Step 3: Backend Development (Hyperledger Fabric)**
+
 **For Coding Assistants (e.g., GitHub Copilot, Amazon CodeWhisperer):**
+
 - "Generate chaincode for signing and verifying document hashes in Hyperledger Fabric."
 - "Write a smart contract function to store document requests on the blockchain."
 
 **For Conversational Models (e.g., ChatGPT, Claude.ai):**
+
 - "How do I deploy custom chaincode on Hyperledger Fabric?"
 - "Explain the certificate authority in Hyperledger Fabric and how to issue user identities."
 - "Write a Node.js function using Hyperledger Fabric SDK to interact with chaincode for querying data."
@@ -346,11 +401,14 @@ Here is a refined, step-wise list of AI-powered prompts you can use across diffe
 ---
 
 ### **Step 4: Frontend Development (React)**
+
 **For Coding Assistants (e.g., GitHub Copilot, Amazon CodeWhisperer):**
+
 - "Create a React component for uploading documents and sending them to the backend via Axios."
 - "Provide code for a role-based React dashboard with routing and restricted access."
 
 **For Conversational Models (e.g., ChatGPT, Claude.ai):**
+
 - "How do I connect a React app to a Hyperledger Fabric backend using REST APIs?"
 - "What’s the best way to manage API calls securely in React?"
 - "Explain how to implement role-based routing in React with dynamic menus."
@@ -358,17 +416,22 @@ Here is a refined, step-wise list of AI-powered prompts you can use across diffe
 ---
 
 ### **Step 5: Document Storage (IPFS)**
+
 **For Conversational Models (e.g., Gemini, ChatGPT):**
+
 - "How do I integrate IPFS for decentralized document storage in a blockchain system?"
 - "Generate a React component for uploading files to IPFS and displaying their hashes."
 
 **For Coding Assistants (e.g., GitHub Copilot):**
+
 - "Write a Node.js function to upload a file to IPFS and store the hash on Hyperledger Fabric."
 
 ---
 
 ### **Step 6: Debugging and Troubleshooting**
+
 **For Conversational Models (e.g., ChatGPT, Microsoft Copilot):**
+
 - "Why is my Hyperledger Fabric chaincode not responding? Here’s the error: [paste error]."
 - "I’m getting a 'No chaincode found' error when querying my Fabric network. How do I fix it?"
 - "My React app is failing to fetch data from the blockchain backend. What are the potential causes?"
@@ -376,27 +439,35 @@ Here is a refined, step-wise list of AI-powered prompts you can use across diffe
 ---
 
 ### **Step 7: Integration of Frontend and Backend**
+
 **For Conversational Models (e.g., ChatGPT, Claude.ai):**
+
 - "How do I integrate my React app with the Hyperledger Fabric backend using REST APIs?"
 - "What is the best approach for handling errors in a blockchain-based system with React?"
 
 **For Coding Assistants (e.g., GitHub Copilot):**
+
 - "Write a React function to verify a document by comparing its hash with the blockchain record."
 
 ---
 
 ### **Step 8: Deployment**
+
 **For Conversational Models (e.g., ChatGPT, Microsoft Copilot):**
+
 - "Guide me through deploying Hyperledger Fabric on a free-tier cloud service like AWS."
 - "How do I deploy my React app to Vercel or Netlify?"
 
 **For Specialized Models (e.g., Amazon AI, Claude.ai):**
+
 - "Configure a CI/CD pipeline for deploying both frontend (React) and backend (Fabric)."
 
 ---
 
 ### **Step 9: Optimization and Security**
+
 **For Conversational Models (e.g., DeepSeekAI, Claude.ai):**
+
 - "How do I optimize Hyperledger Fabric for performance and scalability?"
 - "What are the most common vulnerabilities in blockchain systems, and how can I secure them?"
 - "How do I securely store private keys and other sensitive data in a blockchain-based system?"
@@ -404,7 +475,9 @@ Here is a refined, step-wise list of AI-powered prompts you can use across diffe
 ---
 
 ### **Step 10: Testing and Validation**
+
 **For Conversational Models (e.g., ChatGPT, Claude.ai):**
+
 - "What are the best practices for testing a blockchain-based application?"
 - "How do I create unit and integration tests for Hyperledger Fabric chaincode?"
 - "Generate test cases for verifying document authenticity in my React application."
@@ -412,7 +485,9 @@ Here is a refined, step-wise list of AI-powered prompts you can use across diffe
 ---
 
 ### **Step 11: Knowledge Sharing and Improvement**
+
 **For Conversational Models (e.g., ChatGPT, Claude.ai):**
+
 - "What are the best resources for learning Hyperledger Fabric and React?"
 - "Explain common issues faced during Hyperledger Fabric setup and their solutions."
 - "Suggest active developer communities for blockchain and Hyperledger Fabric."
@@ -420,6 +495,7 @@ Here is a refined, step-wise list of AI-powered prompts you can use across diffe
 ----
 
 ## Final Confirmation
+
 Yes, these structured, step-wise AI prompts can be a very useful roadmap to complete your project on time. Here’s why:
 
 - **Comprehensive Flow:**  
