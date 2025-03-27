@@ -1164,3 +1164,59 @@ A primary key column helps uniquely identify each record in a table.
 
 ---
 
+```sql:
+mysql>     UPDATE course SET course_duration = 3 WHERE course_name = 'AI';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql> select * from student; select * from course;
++------------+--------------+----------------+-----------+
+| student_id | student_name | student_edu_bg | course_id |
++------------+--------------+----------------+-----------+
+|          1 | Aman         | B.Tech         |         1 |
+|          2 | Alfaj        | B.Tech         |         2 |
+|          3 | Yash         | B.Tech         |         3 |
+|          4 | Honey        | B.Tech         |         4 |
+|          5 | Bob          | B.Tech         |         5 |
++------------+--------------+----------------+-----------+
+5 rows in set (0.00 sec)
+
++-----------+-------------+-----------------+
+| course_id | course_name | course_duration |
++-----------+-------------+-----------------+
+|         1 | Java        | 1 month         |
+|         2 | Python      | 1 month         |
+|         3 | AI          | 3               |
+|         4 | ML          | 1 month         |
+|         5 | DL          | 1 month         |
++-----------+-------------+-----------------+
+5 rows in set (0.00 sec)
+
+mysql>     UPDATE course SET course_duration = '3 months' WHERE course_name = 'AI';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from student; select * from course;
++------------+--------------+----------------+-----------+
+| student_id | student_name | student_edu_bg | course_id |
++------------+--------------+----------------+-----------+
+|          1 | Aman         | B.Tech         |         1 |
+|          2 | Alfaj        | B.Tech         |         2 |
+|          3 | Yash         | B.Tech         |         3 |
+|          4 | Honey        | B.Tech         |         4 |
+|          5 | Bob          | B.Tech         |         5 |
++------------+--------------+----------------+-----------+
+5 rows in set (0.00 sec)
+
++-----------+-------------+-----------------+
+| course_id | course_name | course_duration |
++-----------+-------------+-----------------+
+|         1 | Java        | 1 month         |
+|         2 | Python      | 1 month         |
+|         3 | AI          | 3 months        |
+|         4 | ML          | 1 month         |
+|         5 | DL          | 1 month         |
++-----------+-------------+-----------------+
+5 rows in set (0.00 sec)
+
+```
