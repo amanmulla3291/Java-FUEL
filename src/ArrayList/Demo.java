@@ -4,11 +4,11 @@ import java.util.ArrayList;
 // 17/03/2025
 public class Demo {
     public static void main(String[] args) {
-        ArrayList al = new ArrayList();
+        ArrayList<Integer> al = new ArrayList<>();
         al.add(10);
-        al.add(20);
-        al.add("SAM");
-        al.add(20.5);
+        // al.add(20);
+        // al.add("SAM");
+        // al.add(20.5);
         al.add(null);
         al.add(20);
 

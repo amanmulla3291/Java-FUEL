@@ -7,7 +7,7 @@ public class TreeSetExample3 {
         treeSet.add("Apple");
         treeSet.add("Banana");
         treeSet.add("Cherry");
-        TreeSet<String> clonedSet = (TreeSet<String>) treeSet.clone();
+        TreeSet<String> clonedSet = new TreeSet<>(treeSet);
         System.out.println("Cloned TreeSet: " + clonedSet);
     }
 }

@@ -14,7 +14,7 @@ public class Student {
         a1.add(40);
         a1.add(50);
 
-        LinkedHashSet l1 = new LinkedHashSet<>(a1);
+        LinkedHashSet<Integer> l1 = new LinkedHashSet<>(a1);
         System.out.println(l1);
     }
 }

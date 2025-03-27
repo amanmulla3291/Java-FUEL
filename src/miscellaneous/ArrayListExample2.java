@@ -10,7 +10,7 @@ public class ArrayListExample2 {
         al.add("Element 3");
         al.add("Element 4");
         System.out.println("Array List : " + al);
-        al.addFirst("Element X");
+        //al.addFirst("Element X");
         System.out.println("ArrayList after adding element : " + al);
     }
 }

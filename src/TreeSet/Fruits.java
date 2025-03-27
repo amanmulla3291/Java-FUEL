@@ -4,7 +4,7 @@ import java.util.TreeSet;
 
 public class Fruits {
     public static void main(String[] args) {
-        TreeSet tr = new TreeSet<>();
+        TreeSet<String> tr = new TreeSet<>();
         tr.add("Banana");
         tr.add("Strawberry");
         tr.add("Kiwi");

@@ -10,7 +10,7 @@ public class Test {
     Student S3 = new Student(68, "Valentino Rossi");
     Student S4 = new Student(93, "Lewis Hamilton");
 
-    ArrayList<Student> A1 = new ArrayList();
+    ArrayList<Student> A1 = new ArrayList<>();
 
     A1.add(S1);
     A1.add(S2);

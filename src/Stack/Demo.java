@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Demo {
     public static void main(String[] args) {
-        Stack S1 = new Stack();
+        Stack<Integer> S1 = new Stack<>();
         S1.add(10);
         S1.push(20);
         S1.push(30);

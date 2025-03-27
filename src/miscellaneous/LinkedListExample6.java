@@ -10,7 +10,7 @@ public class LinkedListExample6 {
         list.add("Three");
 
         for (String e : list){
-            System.out.println(list);
+            System.out.println(e);
         }
     }
 }

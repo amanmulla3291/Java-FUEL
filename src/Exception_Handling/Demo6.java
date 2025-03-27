@@ -34,9 +34,9 @@ public class Demo6 {
                 throw new InvalidUserName();
             } catch (InvalidUserName e) {
                 System.out.println("Invalid UserName");
+            } finally {
+                sc.close();
             }
         }
-
-        sc.close();
     }
 }
