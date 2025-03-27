@@ -1220,3 +1220,194 @@ mysql> select * from student; select * from course;
 5 rows in set (0.00 sec)
 
 ```
+
+## SQL Joins
+
+- A joins in mysql is used to combine rows from two or more tables based on a related column between them (usually foreing key).
+- Joins help retrieve data from multiple tables in a single query.
+- The retrival of data by selecting multiple columns at a time is known as a join.
+- There are different types of SQL joins:
+    1. **CROSS JOIN**
+    2. **INNER JOIN**
+    3. **OUTER JOIN**
+       1. **LEFT OUTER JOIN**
+       2. **RIGHT OUTER JOIN**
+       3. **FULL OUTER JOIN**
+    4. **NATURAL JOIN**
+    5. **SELF JOIN**
+    
+
+---
+
+### 1. CROSS JOIN
+
+- In a cross join, records from the first table are merged with all the records from the second table.
+(Here we are going to get output as a cross product of record)
+- In this type of join, user will get matched and unmatched records.
+
+```sql
+SELECT * FROM table1 CROSS JOIN table2;
+
+```
+
+Question: Why to use or what is hte need of cross join?
+
+```plaintext
+Answer:
+    Whenever there is no relation (foreign key) between tables so no other type of joins will work, so we need to go for cross join mandatorly.
+
+mysql> SELECT * FROM course CROSS JOIN student;
+```
+
+### 2. INNER JOIN
+
+- In innrer join, in MySQL is used to retrieve the records from both tables which have a match in both tables based on a common column.
+- If there is a no match the records are not included in the result set.
+- Here we have to apply join condition on the common data from the both table we use inner join.
+- If ambuigity is the among the common column name then we can take help of allias support.
+- This inner join returns only matched records from the ``DB table`` based on the common cloumn.
+
+```sql
+SELECT * FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name;
+```
+
+```sql
+mysql> SELECT * FROM course INNER JOIN student ON course.course_id = student.course_id;
+```
+
+```sql
+mysql> SELECT student.student_name FROM course INNER JOIN student ON course.course_id = student.course_id;
+```
+
+**Question:**
+
+```plaintext
+Create two tables of user and message where user table has three columns user_id, user_name, user_email and message table has four columns message_id, user_id, message_content, time_stamp.
+connect both tables with the help of foreign key and follow inner join process.
+
+CREATE TABLE user(
+    user_id INT PRIMARY KEY,
+    user_name VARCHAR(50),
+    user_email VARCHAR(50)
+);
+
+CREATE TABLE message(
+    message_id INT PRIMARY KEY,
+    user_id INT,
+    message_content VARCHAR(50),
+    time_stamp TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(user_id)
+);
+
+```
+
+1. Write an Inner join query to display the user_name and message_content from both table.
+
+```sql
+mysql> SELECT user.user_name, message.message_content FROM user INNER JOIN message ON user.user_id = message.user_id;
+```
+
+```plaintext
++--------------+--------------------------------+
+| user_name    | message_content                |
++--------------+--------------------------------+
+| Amit Sharma  | Hello, how are you?            |
+| Priya Singh  | Meeting at 3 PM.               |
+| Rahul Verma  | Can you send the report?       |
+| Anjali Gupta | Happy Birthday!                |
+| Vikram Mehta | Let’s catch up soon.           |
+| Neha Kapoor  | Project deadline extended.     |
+| Rohan Desai  | Lunch at 1 PM?                 |
+| Sneha Iyer   | Please review the document.    |
+| Arjun Nair   | Call me when you’re free.      |
+| Kavita Rao   | Great job on the presentation! |
++--------------+--------------------------------+
+```
+
+2. Write an inner join query to fetch the user_name and message_content where the message are sent after 26/03/2025.
+
+```sql
+mysql> SELECT user.user_name, message.message_content FROM user INNER JOIN message ON user.user_id = message.user_id WHERE message.time_stamp > '2025-03-26';
+```
+
+```plaintext
++--------------+--------------------------------+
+| user_name    | message_content                |
++--------------+--------------------------------+
+| Rahul Verma  | Can you send the report?       |
+| Anjali Gupta | Happy Birthday!                |
+| Vikram Mehta | Let’s catch up soon.           |
+| Neha Kapoor  | Project deadline extended.     |
+| Rohan Desai  | Lunch at 1 PM?                 |
+| Sneha Iyer   | Please review the document.    |
+| Arjun Nair   | Call me when you’re free.      |
+| Kavita Rao   | Great job on the presentation! |
++--------------+--------------------------------+
+```
+
+3. Write an inner join query to display the user_name and the number of mesage sent by the user.
+
+```sql
+mysql> SELECT user.user_name, COUNT(message.message_id) FROM user INNER JOIN message ON user.user_id = message.user_id GROUP BY user.user_name;
+```
+```plaintext
++--------------+---------------------------+
+| user_name    | COUNT(message.message_id) |
++--------------+---------------------------+
+| Amit Sharma  |                         1 |
+| Priya Singh  |                         1 |
+| Rahul Verma  |                         1 |
+| Anjali Gupta |                         1 |
+| Vikram Mehta |                         1 |
+| Neha Kapoor  |                         1 |
+| Rohan Desai  |                         1 |
+| Sneha Iyer   |                         1 |
+| Arjun Nair   |                         1 |
+| Kavita Rao   |                         1 |
++--------------+---------------------------+
+```
+
+4. Write an inner join query to list all the users who have sent atleast one message ensuring that user without message should not be displayed.
+
+```sql
+mysql> SELECT user.user_name FROM user INNER JOIN message ON user.user_id = message.user_id;
+```
+
+```plaintext
++--------------+
+| user_name    |
++--------------+
+| Amit Sharma  |
+| Priya Singh  |
+| Rahul Verma  |
+| Anjali Gupta |
+| Vikram Mehta |
+| Neha Kapoor  |
+| Rohan Desai  |
+| Sneha Iyer   |
+| Arjun Nair   |
+| Kavita Rao   |
++--------------+
+```
+
+5. Write an inner join query to display username emails and their message.
+
+```sql
+mysql> SELECT user.user_name, user.user_email, message.message_content FROM user INNER JOIN message ON user.user_id = message.user_id;
+```
+```plaintext
++--------------+--------------------------+--------------------------------+
+| user_name    | user_email               | message_content                |
++--------------+--------------------------+--------------------------------+
+| Amit Sharma  | amit.sharma@example.com  | Hello, how are you?            |
+| Priya Singh  | priya.singh@example.com  | Meeting at 3 PM.               |
+| Rahul Verma  | rahul.verma@example.com  | Can you send the report?       |
+| Anjali Gupta | anjali.gupta@example.com | Happy Birthday!                |
+| Vikram Mehta | vikram.mehta@example.com | Let’s catch up soon.           |
+| Neha Kapoor  | neha.kapoor@example.com  | Project deadline extended.     |
+| Rohan Desai  | rohan.desai@example.com  | Lunch at 1 PM?                 |
+| Sneha Iyer   | sneha.iyer@example.com   | Please review the document.    |
+| Arjun Nair   | arjun.nair@example.com   | Call me when you’re free.      |
+| Kavita Rao   | kavita.rao@example.com   | Great job on the presentation! |
++--------------+--------------------------+--------------------------------+
+```
